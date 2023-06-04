@@ -1,0 +1,31 @@
+.header {
+  width: 100%;
+  padding: 30px 0;
+
+  a {
+    position: relative;
+    font-size: 25px;
+    padding: 3px 0;
+    margin: 0 20px;
+
+    color: rgb(44, 44, 255);
+  }
+
+  a:first-child {
+    margin-left: 0;
+  }
+
+  a:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -20px;
+    width: 2px;
+    height: 50px;
+    background-color: #000;
+  }
+
+  a:global(.active) {
+    border-bottom: 3px solid;
+  }
+}
