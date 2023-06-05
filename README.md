@@ -2,11 +2,11 @@
 
 ## To start working with this project, clone it using the command:
 
-### git clone https://github.com/LehezaDmytro/eliftech_delivery-app
+### `git clone https://github.com/LehezaDmytro/eliftech_delivery-app`
 
-## nstall all dependencies:
+## Install all dependencies:
 
-### git install
+### `npm install`
 
 ## To start the project, execute the command:
 
