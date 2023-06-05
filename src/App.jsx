@@ -3,7 +3,6 @@ import SharedLayout from "./components/SharedLayout/SharedLayout";
 import Shop from "./pages/Shop/Shop";
 import Cart from "./pages/Cart/Cart";
 import History from "./pages/History/History";
-// import "./App.css";
 
 function App() {
   return (

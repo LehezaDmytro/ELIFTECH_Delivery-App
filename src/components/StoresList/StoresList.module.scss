@@ -1,0 +1,23 @@
+.stores {
+  width: 250px;
+  text-align: center;
+  padding: 10px 20px;
+
+  border: 1px solid gray;
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    li {
+      input {
+        width: 100%;
+        padding: 10px 20px;
+        border: 1px solid gray;
+
+        background-color: #fff;
+        cursor: pointer;
+      }
+    }
+  }
+}

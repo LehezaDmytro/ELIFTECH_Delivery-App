@@ -1,8 +1,13 @@
+import StoresList from "../../components/StoresList/StoresList";
+import RestaurantMenu from "../../components/RestaurantMenu/RestaurantMenu";
+import styles from "./Shop.module.scss";
+
 const Shop = () => {
   return (
-    <div className="container">
-      <h2>Shop</h2>
-    </div>
+    <section className={styles.shop}>
+      <StoresList />
+      <RestaurantMenu />
+    </section>
   );
 };
 

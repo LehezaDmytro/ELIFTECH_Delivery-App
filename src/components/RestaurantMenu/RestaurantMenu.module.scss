@@ -1,0 +1,33 @@
+.restaurantMenu {
+  height: calc(100vh - 200px);
+  padding: 10px 20px;
+  border: 1px solid gray;
+  overflow-y: auto;
+
+  &__titlse {
+    text-align: center;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 33px;
+
+    li {
+      width: 250px;
+      min-height: 272px;
+      padding: 10px;
+
+      border: 1px solid gray;
+
+      .dishName {
+        font-weight: bold;
+      }
+
+      img {
+        object-fit: cover;
+        object-position: center center;
+      }
+    }
+  }
+}
