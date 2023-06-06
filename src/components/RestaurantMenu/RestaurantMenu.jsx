@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../redux/cartSlice";
 import { useSearchParams } from "react-router-dom";
 
 import { getDishes } from "../../api/dishes";
@@ -6,12 +8,9 @@ import { getDishes } from "../../api/dishes";
 import styles from "./RestaurantMenu.module.scss";
 
 const RestaurantMenu = () => {
+  const dispatch = useDispatch();
   const [menu, setMenu] = useState([]);
-  const [cart, setCart] = useState(
-    JSON.parse(localStorage.getItem("cart")) || []
-  );
   const [searchParams] = useSearchParams();
-  console.log(cart);
 
   const store = searchParams.get("store") || "Mc Donald";
 
@@ -32,8 +31,7 @@ const RestaurantMenu = () => {
     if (e.target.nodeName === "BUTTON") {
       console.log(e.currentTarget.id);
       const id = e.currentTarget.id;
-      setCart([...cart, id]);
-      localStorage.setItem("cart", JSON.stringify(cart));
+      dispatch(addToCart(id));
     }
   };
 

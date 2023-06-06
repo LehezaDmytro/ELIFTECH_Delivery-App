@@ -29,3 +29,26 @@
     border-bottom: 3px solid;
   }
 }
+
+.cartLink {
+  position: relative;
+  display: inline-flex;
+  gap: 5px;
+}
+
+.cart {
+  width: 30px;
+}
+
+.goodsQuantity {
+  position: absolute;
+  top: -2px;
+  right: -9px;
+  font-size: 14px;
+  background-color: green;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  color: white;
+  text-align: center;
+}
