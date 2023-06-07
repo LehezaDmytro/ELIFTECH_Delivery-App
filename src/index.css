@@ -2,6 +2,12 @@
 @import-normalize;
 
 /* basic styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   max-height: 100vh;
   margin: 0;

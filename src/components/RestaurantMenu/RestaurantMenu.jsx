@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../redux/cartSlice";
 import { useSearchParams } from "react-router-dom";
+import { RotatingLines } from "react-loader-spinner";
 
 import { getDishes } from "../../api/dishes";
 
@@ -11,14 +12,17 @@ const RestaurantMenu = () => {
   const dispatch = useDispatch();
   const [menu, setMenu] = useState([]);
   const [searchParams] = useSearchParams();
+  const [isLoading, setLoading] = useState(false);
 
   const store = searchParams.get("store") || "Mc Donald";
 
   useEffect(() => {
     const featchMenu = async () => {
       try {
+        setLoading(true);
         const data = await getDishes(store);
         setMenu([...data]);
+        setLoading(false);
       } catch (error) {
         console.log(error.name);
         console.log(error.message);
@@ -47,7 +51,13 @@ const RestaurantMenu = () => {
   return (
     <section className={styles.restaurantMenu}>
       <h3 className={styles.restaurantMenu__title}>Menu</h3>
-      <ul className={styles.restaurantMenu__list}>{menuMarkup}</ul>
+      {isLoading ? (
+        <div className={styles.thumb}>
+          <RotatingLines />
+        </div>
+      ) : (
+        <ul className={styles.restaurantMenu__list}>{menuMarkup}</ul>
+      )}
     </section>
   );
 };

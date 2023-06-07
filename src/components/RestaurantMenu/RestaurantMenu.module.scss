@@ -3,6 +3,7 @@
   padding: 10px 20px;
   border: 1px solid gray;
   overflow-y: auto;
+  min-width: 900px;
 
   &__titlse {
     text-align: center;
@@ -12,6 +13,8 @@
     display: flex;
     flex-wrap: wrap;
     gap: 33px;
+
+    max-width: 900px;
 
     li {
       width: 250px;
@@ -29,5 +32,10 @@
         object-position: center center;
       }
     }
+  }
+
+  .thumb {
+    margin-top: 100px;
+    text-align: center;
   }
 }
