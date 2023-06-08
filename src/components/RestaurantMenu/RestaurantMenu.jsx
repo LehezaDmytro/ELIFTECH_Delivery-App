@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../../redux/cartSlice";
+import { getCart } from "../../redux/selectors";
 import { useSearchParams } from "react-router-dom";
 import { RotatingLines } from "react-loader-spinner";
 
@@ -14,6 +15,7 @@ const RestaurantMenu = () => {
   const [searchParams] = useSearchParams();
   const [isLoading, setLoading] = useState(false);
 
+  const cart = useSelector(getCart);
   const store = searchParams.get("store") || "Mc Donald";
 
   useEffect(() => {
@@ -33,9 +35,15 @@ const RestaurantMenu = () => {
 
   const handleBtn = (e) => {
     if (e.target.nodeName === "BUTTON") {
-      console.log(e.currentTarget.id);
       const id = e.currentTarget.id;
-      dispatch(addToCart(id));
+      const duplicate = cart.find((dishId) => id === dishId);
+      if (duplicate) {
+        alert(
+          "This dish is already in your cart! You can change the quantity on the cart page."
+        );
+      } else {
+        dispatch(addToCart(id));
+      }
     }
   };
 

@@ -11,6 +11,7 @@ function App() {
         <Route index element={<Shop />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/history" element={<History />} />
+        <Route path="*" element={<Shop />} />
       </Route>
     </Routes>
   );

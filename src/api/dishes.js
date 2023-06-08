@@ -14,3 +14,12 @@ export const getDishes = async (shop = "Mc Donald") => {
     throw error;
   }
 };
+
+export const getOrderedDishes = async (ids) => {
+  try {
+    const { data } = await dishesInstance.post("/dishes", ids);
+    return data;
+  } catch (error) {
+    throw error;
+  }
+};
