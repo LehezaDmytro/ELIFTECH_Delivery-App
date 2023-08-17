@@ -30,7 +30,7 @@ const Cart = () => {
       <img src={el.img_url} alt={el.dish} />
       <div>
         <p className={styles.dishName}>{el.dish}</p>
-        <p>{el.price}</p>
+        <p>Price: {el.price}</p>
         <input type="number" />
         <input type="button" value="delete" />
       </div>
