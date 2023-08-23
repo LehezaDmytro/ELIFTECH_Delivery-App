@@ -51,6 +51,11 @@
           font-weight: bold;
         }
 
+        .quantity::-webkit-outer-spin-button,
+        .quantity::-webkit-inner-spin-button {
+          opacity: 1;
+        }
+
         input {
           display: block;
         }

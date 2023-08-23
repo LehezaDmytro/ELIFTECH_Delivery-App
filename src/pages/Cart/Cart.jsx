@@ -25,13 +25,28 @@ const Cart = () => {
     fetchUserOrder();
   }, [cart]);
 
+  const maxInputLength = (e) => {
+    let CurrentValue = e.target.value;
+    console.log(CurrentValue);
+    if (CurrentValue.length > 2) {
+      e.target.value = CurrentValue.slice(0, 2);
+    }
+  };
+
   const userOederMarkup = userOrder.map((el) => (
     <li key={el._id}>
       <img src={el.img_url} alt={el.dish} />
       <div>
         <p className={styles.dishName}>{el.dish}</p>
         <p>Price: {el.price}</p>
-        <input type="number" />
+        <input
+          className={styles.quantity}
+          type="number"
+          defaultValue="1"
+          min={1}
+          max={99}
+          onChange={maxInputLength}
+        />
         <input type="button" value="delete" />
       </div>
     </li>
